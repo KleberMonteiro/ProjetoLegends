@@ -1,0 +1,60 @@
+.platform {
+	clear: both;
+}
+
+.logo {
+	display: block;
+	margin: 20px auto;
+	max-width: 50%;
+	width: 200px;
+}
+
+.search-summoner .ui-input-text {
+	display: block;
+	width: 70%; 
+	margin: 0 auto;
+}
+
+.search-summoner .ui-input-btn {
+	display: block;
+	width: 30%; 
+	margin: 10px auto;
+}
+
+.summoner {	
+	margin: 0 auto;
+	max-width: 90%;
+}
+
+.summoner .header .icon {
+	float: left;
+	width: 50px;
+}
+
+.summoner .header .icon img {
+	width: 50px;
+}
+
+.summoner .header .description {
+	float: left;
+	margin: 0 0 0 20px;
+}
+
+.summoner .header .description .name {
+	display: block;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.summoner .header .description .level {
+	font-size: 13px;
+}
+
+.summoner .header .tier {
+	float: right;
+}
+
+.summoner .header .tier img {
+	width: 70px;
+	margin-top: -10px;
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title>Legends</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="resources/css/jquery/jquery.mobile-1.4.5.css" />
+	<link rel="stylesheet" href="resources/css/style.css" />
+	<script src="resources/js/jquery.js" />
+	<script src="resources/js/jquery.mobile-1.4.5.js" />
+</h:head>
+<h:body>
+	<img src="resources/images/logo.png" class="logo" />
+	<div class="summoner">
+		<div class="header">
+			<div class="icon">	
+				<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/profileicon/#{summonerMB.summoner.profileIconId}.png" />				
+			</div>
+			<div class="description">	
+				<span class="name">#{summonerMB.summoner.name}</span>	
+				<span class="level">Level #{summonerMB.summoner.summonerLevel}</span>
+			</div>
+			<div class="tier">	
+				<img src="#{summonerMB.urlTierImage}" />
+			</div>
+			<div class="platform" />
+		</div>
+		<hr />
+	</div>	
+</h:body>
+</html>
