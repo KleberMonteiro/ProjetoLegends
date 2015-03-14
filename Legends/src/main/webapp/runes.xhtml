@@ -32,7 +32,7 @@
 		</div>
 		<hr />
 		<div data-role="collapsible-set">
-			<ui:repeat var="runePage" value="#{summonerMB.runePages}" varStatus="varStatus">
+			<ui:repeat var="runePage" value="#{summonerMB.runePages}">
 				<div data-role="collapsible">
 					<h3>#{runePage.name}</h3>
 					<ui:repeat var="rune" value="#{runePage.runes}">

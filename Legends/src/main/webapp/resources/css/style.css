@@ -67,4 +67,10 @@
 .ui-collapsible-content {
 	border: none;	
 }
+
+.mastery {
+	float: left; 
+	margin: 20px 20px 0 0;
+	width: 64px;
+	height: 64px;
 }

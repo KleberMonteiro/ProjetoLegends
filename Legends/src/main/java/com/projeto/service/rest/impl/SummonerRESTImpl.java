@@ -49,8 +49,8 @@ public class SummonerRESTImpl extends GenericRESTImpl {
 								.format("https://br.api.pvp.net/api/lol/br/v1.4/summoner/{0}/masteries?api_key=b874d81b-2ef2-4554-9bec-7f9c8143906e",
 										ids.toString()), URLType.GET);
 
-		Map<String, MasteryPagesDto> map = new HashMap<String, MasteryPagesDto>();
-		HashMap<String, MasteryPagesDto> summoner = (HashMap<String, MasteryPagesDto>) jsonParser.fromJson(response, map.getClass());
+		Type t = new TypeToken<HashMap<String, MasteryPagesDto>>() {}.getType();
+		HashMap<String, MasteryPagesDto> summoner = (HashMap<String, MasteryPagesDto>) jsonParser.fromJson(response, t);
 
 		return summoner;
 	}

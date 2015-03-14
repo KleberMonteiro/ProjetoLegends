@@ -1,11 +1,11 @@
 package com.projeto.service.json.objects.summoners;
 
-import java.util.Set;
+import java.util.List;
 
 public class MasteryPagesDto {
 
 	private long summonerId;
-	private Set<MasteryPageDto> pages;
+	private List<MasteryPageDto> pages;
 
 	public long getSummonerId() {
 		return summonerId;
@@ -15,11 +15,11 @@ public class MasteryPagesDto {
 		this.summonerId = summonerId;
 	}
 
-	public Set<MasteryPageDto> getPages() {
+	public List<MasteryPageDto> getPages() {
 		return pages;
 	}
 
-	public void setPages(Set<MasteryPageDto> pages) {
+	public void setPages(List<MasteryPageDto> pages) {
 		this.pages = pages;
 	}
 }

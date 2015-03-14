@@ -25,7 +25,7 @@ public class MasteryPageDto {
 		this.id = id;
 	}
 
-	public List<MasteryDto> MasteryDto() {
+	public List<MasteryDto> getMasteries() {
 		return masteries;
 	}
 

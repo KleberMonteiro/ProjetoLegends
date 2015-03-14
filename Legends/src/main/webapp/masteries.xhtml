@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Legends</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" href="resources/css/jquery/jquery.mobile-1.4.5.css" />
+	<link rel="stylesheet" href="resources/css/style.css" />
+	<script src="resources/js/jquery.js" />
+	<script src="resources/js/jquery.mobile-1.4.5.js" />
+</h:head>
+<h:body>
+	<img src="resources/images/logo.png" class="logo" />
+	<div class="summoner">
+		<div class="header">
+			<div class="icon">	
+				<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/profileicon/#{summonerMB.summoner.profileIconId}.png" />				
+			</div>
+			<div class="description">	
+				<span class="name">#{summonerMB.summoner.name}</span>	
+				<span class="level">Level #{summonerMB.summoner.summonerLevel}</span>
+			</div>
+			<div class="tier">	
+				<img src="#{summonerMB.urlTierImage}" />
+			</div>
+			<div class="platform" />
+		</div>
+		<hr />
+		
+		<h:form>
+			<h:selectOneMenu value="#{summonerMB.selectedMasteryPage}">
+				<f:selectItems value="#{summonerMB.masteryPages}" var="masteryPage" itemLabel="#{masteryPage.name}" itemValue="#{masteryPage.id}" />
+				<f:ajax immediate="true" execute="@this" render=":pnlMasteries" />
+			</h:selectOneMenu>
+		</h:form>
+		
+		<h:panelGroup id="pnlMasteries">		
+			<div class="masteries">
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4111.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4111) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>	
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4112.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4112) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4113.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4113) ? 'opacity:1' : 'opacity:0.3'}" />
+				</div>
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4114.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4114) ? 'opacity:1' : 'opacity:0.3'}" />
+				</div>	
+					
+				<div class="platform" />
+				
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4121.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4121) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>	
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4122.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4122) ? 'opacity:1' : 'opacity:0.3'}" />
+				</div>
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4123.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4123) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4124.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4124) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>		
+				
+				<div class="platform" />
+				
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4131.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4131) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>	
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4132.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4132) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4133.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4133) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4134.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4134) ? 'opacity:1' : 'opacity:0.3'}" />
+				</div>	
+				
+				<div class="platform" />
+				
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4141.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4141) ? 'opacity:1' : 'opacity:0.3'}" />
+				</div>	
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4142.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4142) ? 'opacity:1' : 'opacity:0.3'}" />
+				</div>
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4143.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4143) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4144.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4144) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>	
+				
+				<div class="platform" />
+				
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4151.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4151) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>	
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4152.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4152) ? 'opacity:1' : 'opacity:0.3'}" />	
+				</div>
+				<div class="mastery"></div>
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4154.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4154) ? 'opacity:1' : 'opacity:0.3'}" />		
+				</div>
+				
+				<div class="platform" />
+				
+				<div class="mastery"></div>	
+				<div class="mastery">
+					<img src="https://ddragon.leagueoflegends.com/cdn/5.2.1/img/mastery/4162.png" 
+						style="#{summonerMB.containsMastery(summonerMB.selectedMasteryPage, 4162) ? 'opacity:1' : 'opacity:0.3'}" />		
+				</div>
+				<div class="mastery"></div>
+				<div class="mastery"></div>
+				
+				<div class="platform" />				
+			</div>
+		</h:panelGroup>
+		
+	</div>	
+</h:body>
+</html>

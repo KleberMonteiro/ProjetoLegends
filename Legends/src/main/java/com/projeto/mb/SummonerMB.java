@@ -13,6 +13,9 @@ import javax.faces.bean.SessionScoped;
 
 import com.projeto.service.json.objects.league.LeagueDto;
 import com.projeto.service.json.objects.league.LeagueEntryDto;
+import com.projeto.service.json.objects.summoners.MasteryDto;
+import com.projeto.service.json.objects.summoners.MasteryPageDto;
+import com.projeto.service.json.objects.summoners.MasteryPagesDto;
 import com.projeto.service.json.objects.summoners.RunePageDto;
 import com.projeto.service.json.objects.summoners.RunePagesDto;
 import com.projeto.service.json.objects.summoners.SummonerDto;
@@ -33,6 +36,9 @@ public class SummonerMB implements Serializable {
 	private String urlTierImage;
 	private List<RunePageDto> runePages;
 	private Map<Integer, String> imgRunesMap;
+	private List<MasteryPageDto> masteryPages;
+	private Map<Long, Map<Integer, MasteryDto>> masteryPagesMap;
+	private Long selectedMasteryPage;
 	
 	@PostConstruct
 	public void init() {
@@ -92,6 +98,7 @@ public class SummonerMB implements Serializable {
 		} 
 		
 		runePages = null;
+		masteryPagesMap = null;
 		
 		return Pages.SUMMONER.getPage(); 
 	}	
@@ -111,6 +118,47 @@ public class SummonerMB implements Serializable {
 		return Pages.RUNES.getPage(); 
 	}
 	
+	public String abrirTalentos() {				
+		
+		if (masteryPagesMap == null) {
+			masteryPages = new ArrayList<MasteryPageDto>();
+			masteryPagesMap = new HashMap<Long, Map<Integer,MasteryDto>>();
+			HashMap<String, MasteryPagesDto> masteriesResponse = new SummonerRESTImpl().searchMasteriesByIds(summoner.getId());
+			
+			for (Entry<String, MasteryPagesDto> entryRunePages : masteriesResponse.entrySet()) {			
+				MasteryPagesDto masteriePages = entryRunePages.getValue();							
+				Map<Integer,MasteryDto> masteriesMap = null;
+				
+				for (MasteryPageDto masteriePage : masteriePages.getPages()) {
+					masteryPages.add(masteriePage);
+					masteriesMap = new HashMap<Integer, MasteryDto>();
+					
+					if (masteriePage.getMasteries() != null) {
+						for (MasteryDto mastery : masteriePage.getMasteries()) {
+							masteriesMap.put(mastery.getId(), mastery);
+						}
+						
+						masteryPagesMap.put(masteriePage.getId(), masteriesMap); 
+					}
+				}	
+				
+				selectedMasteryPage = masteryPages.get(0).getId();
+			}
+		}			
+		
+		return Pages.MASTERIES.getPage(); 
+	}
+	
+	public boolean containsMastery(Long idPage, Integer idMastery) {
+		boolean exists = false;
+		
+		if (masteryPagesMap.containsKey(idPage)) {
+			exists = masteryPagesMap.get(idPage).containsKey(idMastery);
+		}
+		
+		return exists;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -123,32 +171,41 @@ public class SummonerMB implements Serializable {
 		return summoner;
 	}
 
-	public void setSummoner(SummonerDto summoner) {
-		this.summoner = summoner;
+	public String getTier() {
+		return tier;
+	}
+
+	public String getDivision() {
+		return division;
 	}
 
 	public String getUrlTierImage() {
 		return urlTierImage;
 	}
 
-	public void setUrlTierImage(String urlTierImage) {
-		this.urlTierImage = urlTierImage;
-	}
-
 	public List<RunePageDto> getRunePages() {
 		return runePages;
-	}
-
-	public void setRunePages(List<RunePageDto> runePages) {
-		this.runePages = runePages;
 	}
 
 	public Map<Integer, String> getImgRunesMap() {
 		return imgRunesMap;
 	}
 
-	public void setImgRunesMap(Map<Integer, String> imgRunesMap) {
-		this.imgRunesMap = imgRunesMap;
+	public List<MasteryPageDto> getMasteryPages() {
+		return masteryPages;
 	}
 
+	public Map<Long, Map<Integer, MasteryDto>> getMasteryPagesMap() {
+		return masteryPagesMap;
+	}
+
+	public Long getSelectedMasteryPage() {
+		return selectedMasteryPage;
+	}
+
+	public void setSelectedMasteryPage(Long selectedMasteryPage) {
+		this.selectedMasteryPage = selectedMasteryPage;
+	}
+
+	
 }
