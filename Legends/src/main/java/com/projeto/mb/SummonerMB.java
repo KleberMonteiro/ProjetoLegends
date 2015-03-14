@@ -26,7 +26,7 @@ public class SummonerMB implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private SummonerDto summoner;	
+	private SummonerDto summoner;
 	private String name;
 	private String tier;
 	private String division;
