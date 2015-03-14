@@ -45,6 +45,18 @@ public class SummonerMB implements Serializable {
 		imgRunesMap.put(5335, "bl_1_3.png");
 		imgRunesMap.put(5273, "r_1_3.png");
 		imgRunesMap.put(5357, "bl_3_3.png");
+		imgRunesMap.put(5337, "bl_3_3.png");
+		imgRunesMap.put(5297, "b_3_3.png");
+		imgRunesMap.put(5295, "b_1_3.png");
+		imgRunesMap.put(5365, "bl_3_3.png");
+		imgRunesMap.put(5418, "bl_4_3.png");
+		imgRunesMap.put(5412, "bl_1_3.png");
+		imgRunesMap.put(5402, "r_1_3.png");
+		imgRunesMap.put(5247, "r_3_3.png");
+		imgRunesMap.put(5257, "r_1_3.png");
+		imgRunesMap.put(5316, "y_4_3.png");
+		imgRunesMap.put(5345, "bl_3_3.png");
+		imgRunesMap.put(5355, "bl_1_3.png");
 		
 	}
 
@@ -74,7 +86,7 @@ public class SummonerMB implements Serializable {
 			urlTierImage = "resources/images/leagues/" + tier.toLowerCase() + "_" + division + ".png";
 		} else {
 			urlTierImage = "resources/images/leagues/default.png";
-		}
+		} 
 		
 		runePages = null;
 		
