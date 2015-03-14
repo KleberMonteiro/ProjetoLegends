@@ -34,7 +34,7 @@
 		<div data-role="collapsible-set">
 			<ui:repeat var="runePage" value="#{summonerMB.runePages}" varStatus="varStatus">
 				<div data-role="collapsible">
-					<h3 class="ui-collapsible-heading">#{varStatus.index + 1}</h3>
+					<h3>#{runePage.name}</h3>
 					<ui:repeat var="rune" value="#{runePage.runes}">
 						<div style="float: left; text-align: center">
 							<img src ="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/rune/#{summonerMB.imgRunesMap[rune]}" style="display: block" />

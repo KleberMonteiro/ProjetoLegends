@@ -57,6 +57,9 @@ public class SummonerMB implements Serializable {
 		imgRunesMap.put(5316, "y_4_3.png");
 		imgRunesMap.put(5345, "bl_3_3.png");
 		imgRunesMap.put(5355, "bl_1_3.png");
+		imgRunesMap.put(5367, "bl_4_3.png");
+		imgRunesMap.put(5331, "y_3_3.png");
+		imgRunesMap.put(5213, "bl_1_2.png");
 		
 	}
 
