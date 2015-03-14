@@ -21,9 +21,14 @@
 	margin: 10px auto;
 }
 
-.summoner {	
+.summoner,
+.options {	
 	margin: 0 auto;
 	max-width: 90%;
+}
+
+.options {	
+	margin-top: 50px;
 }
 
 .summoner .header .icon {
@@ -57,4 +62,9 @@
 .summoner .header .tier img {
 	width: 70px;
 	margin-top: -10px;
+}
+
+.ui-collapsible-content {
+	border: none;	
+}
 }

@@ -45,3 +45,5 @@ Temporary Items
 Servers
 RemoteSystemsTempFiles
 Legends/target/m2e-wtp/web-resources/META-INF/maven/com.mkyong.common/JavaServerFaces/pom.properties
+*.class
+*.class

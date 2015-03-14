@@ -2,7 +2,8 @@ package com.projeto.util.enums;
 
 public enum Pages {
 	
-	SUMMONER("summoner");
+	SUMMONER("summoner"), 
+	RUNES("runes");;
 	
 	private String page;
 	

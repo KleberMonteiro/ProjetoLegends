@@ -77,10 +77,8 @@ public class SummonerRESTImpl extends GenericRESTImpl {
 								.format("https://br.api.pvp.net/api/lol/br/v1.4/summoner/{0}/runes?api_key=b874d81b-2ef2-4554-9bec-7f9c8143906e",
 										ids.toString()), URLType.GET);
 		
-		//Map<String, RunePagesDto> map = new HashMap<String, RunePagesDto>();
-		
+//		Map<String, RunePagesDto> map = new HashMap<String, RunePagesDto>();		
 		Type t = new TypeToken<HashMap<String, RunePagesDto>>() {}.getType();
-		
 		HashMap<String, RunePagesDto> summoner = (HashMap<String, RunePagesDto>) jsonParser.fromJson(response, t);
 
 		return summoner;

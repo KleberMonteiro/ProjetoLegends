@@ -3,7 +3,8 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:h="http://java.sun.com/jsf/html">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
 
 <h:head>
 	<title>Legends</title>
@@ -29,14 +30,21 @@
 			</div>
 			<div class="platform" />
 		</div>
-		<hr />		
-	</div>
-	<div class="options">
-		<h:form>
-			<h:commandButton value="Runas" action="#{summonerMB.abrirRunas}" />	
-			<h:commandButton value="Talentos" action="#{summonerMB.abrirRunas}" />
-			<h:commandButton value="Histórico" action="#{summonerMB.abrirRunas}" />
-		</h:form>
+		<hr />
+		<div data-role="collapsible-set">
+			<ui:repeat var="runePage" value="#{summonerMB.runePages}">
+				<div data-role="collapsible">
+					<h3 class="ui-collapsible-heading">#{runePage.name}</h3>
+					<ui:repeat var="rune" value="#{runePage.runes}">
+						<div style="float: left; text-align: center">
+							<img src ="http://ddragon.leagueoflegends.com/cdn/5.2.1/img/rune/#{summonerMB.imgRunesMap[rune]}" style="display: block" />
+							<span>#{runePage.gruppedRunes[rune]}x</span>
+						</div>
+					</ui:repeat>			
+					<div class="platform" />
+				</div>
+			</ui:repeat>
+		</div>	
 	</div>	
 </h:body>
 </html>
